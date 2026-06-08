@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DriveGo - Rental Mobil Terbaik & Terpercaya</title>
+  <meta name="description" content="Layanan rental mobil dengan armada terbaik, harga bersaing, dan pelayanan profesional untuk perjalanan Anda.">
+
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+          colors: {
+            'drivego-yellow': '#FFB800',
+            'drivego-dark': '#0A0E1A',
+            'drivego-gray': '#1A1F2E'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-sans bg-drivego-dark text-white antialiased">
+
+  <!-- NAVBAR -->
+  <header class="fixed w-full top-0 z-50 bg-drivego-dark/90 backdrop-blur-md border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="flex items-center justify-between h-20">
+        <div class="flex items-center gap-2">
+          <div class="text-3xl text-drivego-yellow"><i class="fa-solid fa-car"></i></div>
+          <div>
+            <div class="text-xl font-extrabold">DriveGo</div>
+            <div class="text-xs tracking-widest text-slate-400">RENTAL MOBIL</div>
+          </div>
+        </div>
+
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
+          <a href="index.html" class="text-drivego-yellow border-b-2 border-drivego-yellow pb-1">Beranda</a>
+          <a href="#armada" class="text-slate-300 hover:text-white">Armada</a>
+          <a href="#" class="text-slate-300 hover:text-white">Harga</a>
+          <a href="#" class="text-slate-300 hover:text-white">Layanan</a>
+          <a href="#" class="text-slate-300 hover:text-white">Syarat & Ketentuan</a>
+          <a href="#" class="text-slate-300 hover:text-white">Kontak</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a href="https://wa.me/6282231444865" class="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg border border-white/10 text-sm hover:bg-white/5">
+            <i class="fab fa-whatsapp text-lg"></i> +62 822-3144-4865
+          </a>
+          <a href="https://wa.me/6282231444865?text=Halo%20DriveGo,%20mau%20sewa%20mobil" class="bg-drivego-yellow text-drivego-dark px-5 py-2.5 rounded-lg font-bold text-sm hover:opacity-90 flex items-center gap-2">
+            Pesan Sekarang <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<!-- HERO FINAL V7 - VERSI AMAN MAS BRO TANPA BADGE + SCRIPT WA NYATU -->
+<section class="relative pt-32 pb-20 bg-drivego-dark overflow-hidden min-h-[750px] lg:min-h-screen flex items-center">
+
+  <img src="images/hero-bg.webp" alt="Background Gunung"
+       class="absolute inset-0 w-full h-full object-cover opacity-50 z-0">
+
+  <div class="absolute inset-0 z-0"
+       style="background: linear-gradient(90deg, #0A0E1A 0%, #0A0E1A 45%, rgba(10,14,26,0.1) 65%, transparent 85%)">
+  </div>
+
+  <!-- MOBIL UDAH PAS -->
+  <img src="images/hero-innova.webp" alt="Toyota Innova Reborn"
+       class="absolute top-1/2 left-[36%] lg:left-[36%] -translate-y-1/2 h-[58%] lg:h-[58%] w-auto max-w-none z-10 pointer-events-none drop-shadow-[0_30px_30px_rgba(0,0,0,0.9)]">
+
+  <div class="relative z-30 max-w-7xl mx-auto px-4 md:px-8 w-full">
+    <div class="grid grid-cols-12 items-center">
+
+      <!-- TEXT -->
+      <div class="col-span-12 lg:col-span-6 space-y-5 relative z-40">
+        <h1 class="text-4xl md:text-5xl xl:text-6xl font-extrabold leading-tight text-white">
+          RENTAL MOBIL<br>
+          <span class="text-drivego-yellow">TERBAIK & TERPERCAYA</span>
+        </h1>
+        <p class="text-slate-300 text-base lg:text-lg max-w-md">
+          Layanan rental mobil dengan armada terbaik, harga bersaing, dan pelayanan profesional untuk perjalanan Anda.
+        </p>
+      </div>
+
+      <!-- FORM -->
+      <div class="col-span-12 lg:col-start-10 lg:col-span-3 mt-8 lg:mt-0">
+        <div class="bg-slate-900/90 backdrop-blur-lg rounded-xl p-5 border border-white/10 shadow-2xl">
+          <h3 class="text-lg font-bold mb-1 text-white">Booking Sekarang</h3>
+          <p class="text-xs text-slate-300 mb-3">Cek ketersediaan mobil</p>
+          <form id="bookingForm" class="space-y-3">
+              <div>
+                  <label class="text-xs font-medium text-slate-200">Lokasi Penjemputan</label>
+                  <input id="lokasi" type="text" required placeholder="Contoh: Bondowoso Kota" class="w-full mt-1 p-2.5 text-sm rounded-lg bg-slate-800/80 border border-slate-600 text-white placeholder:text-slate-400 focus:ring-2 focus:ring-drivego-yellow focus:outline-none">
+              </div>
+              <div>
+                  <label class="text-xs font-medium text-slate-200">Jenis Mobil</label>
+                  <select id="mobil" required class="w-full mt-1 p-2.5 text-sm rounded-lg bg-slate-800/80 border border-slate-600 text-white focus:ring-2 focus:ring-drivego-yellow focus:outline-none">
+                      <option value="">Pilih Mobil</option>
+                      <option value="Toyota Innova Reborn">Toyota Innova Reborn</option>
+                      <option value="Toyota Avanza">Toyota Avanza</option>
+                      <option value="Honda Brio">Honda Brio</option>
+                      <option value="Mitsubishi Xpander">Mitsubishi Xpander</option>
+                      <option value="Toyota Hiace">Toyota Hiace</option>
+                  </select>
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <div>
+                  <label class="text-xs font-medium text-slate-200">Tanggal Sewa</label>
+                  <input id="tanggal" type="date" required class="w-full mt-1 p-2.5 text-sm rounded-lg bg-slate-800/80 border border-slate-600 text-white focus:ring-2 focus:ring-drivego-yellow focus:outline-none">
+                </div>
+                <div>
+                  <label class="text-xs font-medium text-slate-200">Durasi</label>
+                  <select id="durasi" required class="w-full mt-1 p-2.5 text-sm rounded-lg bg-slate-800/80 border border-slate-600 text-white focus:ring-2 focus:ring-drivego-yellow focus:outline-none">
+                    <option>1 Hari</option>
+                    <option>2 Hari</option>
+                    <option>3 Hari</option>
+                    <option>1 Minggu</option>
+                  </select>
+                </div>
+              <button type="submit" class="w-full bg-drivego-yellow text-drivego-dark py-2.5 rounded-lg font-bold hover:opacity-90 transition text-sm">Cek Ketersediaan</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SCRIPT WA TARUH PALING BAWAH SEBELUM </body> -->
+<script>
+document.getElementById('bookingForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const lokasi = document.getElementById('lokasi').value;
+  const mobil = document.getElementById('mobil').value;
+  const tanggal = document.getElementById('tanggal').value;
+  const durasi = document.getElementById('durasi').value;
+  const tgl = new Date(tanggal).toLocaleDateString('id-ID', {
+    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+  });
+  const noWA = '6282231444865';
+  const pesan = `Halo DriveGo, saya mau booking mobil:%0A%0A*Jenis Mobil:* ${mobil}%0A*Lokasi Jemput:* ${lokasi}%0A*Tanggal Sewa:* ${tgl}%0A*Durasi:* ${durasi}%0A%0AMohon info ketersediaannya. Terima kasih.`;
+  window.open(`https://wa.me/${noWA}?text=${pesan}`, '_blank');
+});
+</script>
+
+  <!-- ARMADA SECTION -->
+  <section id="armada" class="bg-white text-slate-900 py-20">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="grid lg:grid-cols-5 gap-12 mb-12">
+        <div class="lg:col-span-2">
+          <p class="text-drivego-yellow text-xs font-bold tracking-widest mb-2">TENTANG KAMI</p>
+          <h2 class="text-3xl font-extrabold mb-4">KENAPA MEMILIH<br><span class="text-drivego-yellow">DRIVEGO?</span></h2>
+          <p class="text-slate-600 text-sm mb-6">
+            Kami berkomitmen memberikan pengalaman rental mobil terbaik dengan pelayanan profesional dan armada berkualitas.
+          </p>
+          <div class="space-y-4 mb-6">
+            <div class="flex gap-4">
+              <div class="w-10 h-10 rounded-lg bg-drivego-yellow/10 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-shield-halved text-drivego-yellow"></i></div>
+              <div><h4 class="font-bold text-sm">Asuransi Lengkap</h4><p class="text-xs text-slate-500">Semua mobil kami dilengkapi asuransi untuk perjalanan yang lebih aman.</p></div>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-10 h-10 rounded-lg bg-drivego-yellow/10 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-headset text-drivego-yellow"></i></div>
+              <div><h4 class="font-bold text-sm">Layanan Profesional</h4><p class="text-xs text-slate-500">Tim kami siap melayani Anda dengan ramah dan profesional 24/7.</p></div>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-10 h-10 rounded-lg bg-drivego-yellow/10 flex items-center justify-center flex-shrink-0"><i class="fa-regular fa-clock text-drivego-yellow"></i></div>
+              <div><h4 class="font-bold text-sm">Proses Mudah</h4><p class="text-xs text-slate-500">Booking mudah dan cepat melalui website atau WhatsApp.</p></div>
+            </div>
+          </div>
+          <a href="#" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-drivego-yellow text-sm font-bold hover:bg-drivego-yellow hover:text-white">
+            Selengkapnya <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+
+        <div class="lg:col-span-3">
+          <div class="flex items-center justify-between mb-6">
+            <div>
+              <p class="text-drivego-yellow text-xs font-bold tracking-widest mb-1">ARMADA KAMI —</p>
+              <h3 class="text-2xl font-extrabold">PILIH MOBIL SESUAI KEBUTUHAN ANDA</h3>
+            </div>
+            <a href="#" class="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg border border-drivego-yellow text-sm font-bold text-drivego-yellow hover:bg-drivego-yellow hover:text-white">
+              Lihat Semua Armada <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+
+          <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-5">
+            <!-- AVANZA -->
+            <div class="bg-slate-50 rounded-2xl p-4 border border-slate-100">
+              <div class="bg-white rounded-lg mb-3 p-2">
+                <img src="images/avanza.webp" alt="Toyota Avanza" class="w-full h-32 object-contain">
+              </div>
+              <h4 class="font-bold mb-2">Toyota Avanza</h4>
+              <div class="flex items-center gap-3 text-xs text-slate-500 mb-3">
+                <span><i class="fa-solid fa-user"></i> 7 Kursi</span>
+                <span><i class="fa-solid fa-gear"></i> Manual</span>
+                <span><i class="fa-solid fa-snowflake"></i> AC</span>
+              </div>
+              <p class="text-xs text-slate-500">Mulai dari</p>
+              <p class="text-xl font-extrabold mb-3">Rp350.000 <span class="text-xs font-normal text-slate-500">/hari</span></p>
+              <a href="https://wa.me/6282231444865?text=Sewa%20Avanza" class="block text-center bg-drivego-yellow text-white py-2.5 rounded-lg text-xs font-bold hover:opacity-90">Pesan Sekarang →</a>
+            </div>
+
+            <!-- INNOVA -->
+            <div class="bg-slate-50 rounded-2xl p-4 border border-slate-100">
+              <div class="bg-white rounded-lg mb-3 p-2">
+                <img src="images/innova.webp" alt="Toyota Innova" class="w-full h-32 object-contain">
+              </div>
+              <h4 class="font-bold mb-2">Toyota Innova</h4>
+              <div class="flex items-center gap-3 text-xs text-slate-500 mb-3">
+                <span><i class="fa-solid fa-user"></i> 7 Kursi</span>
+                <span><i class="fa-solid fa-gear"></i> Manual</span>
+                <span><i class="fa-solid fa-snowflake"></i> AC</span>
+              </div>
+              <p class="text-xs text-slate-500">Mulai dari</p>
+              <p class="text-xl font-extrabold mb-3">Rp550.000 <span class="text-xs font-normal text-slate-500">/hari</span></p>
+              <a href="https://wa.me/6282231444865?text=Sewa%20Innova" class="block text-center bg-drivego-yellow text-white py-2.5 rounded-lg text-xs font-bold hover:opacity-90">Pesan Sekarang →</a>
+            </div>
+
+            <!-- FORTUNER -->
+            <div class="bg-slate-50 rounded-2xl p-4 border border-slate-100">
+              <div class="bg-white rounded-lg mb-3 p-2">
+                <img src="images/fortuner.webp" alt="Toyota Fortuner" class="w-full h-32 object-contain">
+              </div>
+              <h4 class="font-bold mb-2">Toyota Fortuner</h4>
+              <div class="flex items-center gap-3 text-xs text-slate-500 mb-3">
+                <span><i class="fa-solid fa-user"></i> 7 Kursi</span>
+                <span><i class="fa-solid fa-gear"></i> Manual</span>
+                <span><i class="fa-solid fa-snowflake"></i> AC</span>
+              </div>
+              <p class="text-xs text-slate-500">Mulai dari</p>
+              <p class="text-xl font-extrabold mb-3">Rp1.200.000 <span class="text-xs font-normal text-slate-500">/hari</span></p>
+              <a href="https://wa.me/6282231444865?text=Sewa%20Fortuner" class="block text-center bg-drivego-yellow text-white py-2.5 rounded-lg text-xs font-bold hover:opacity-90">Pesan Sekarang →</a>
+            </div>
+
+            <!-- HIACE -->
+            <div class="bg-slate-50 rounded-2xl p-4 border border-slate-100">
+              <div class="bg-white rounded-lg mb-3 p-2">
+                <img src="images/hiace.webp" alt="Toyota Hiace" class="w-full h-32 object-contain">
+              </div>
+              <h4 class="font-bold mb-2">Toyota Hiace</h4>
+              <div class="flex items-center gap-3 text-xs text-slate-500 mb-3">
+                <span><i class="fa-solid fa-user"></i> 15 Kursi</span>
+                <span><i class="fa-solid fa-gear"></i> Manual</span>
+                <span><i class="fa-solid fa-snowflake"></i> AC</span>
+              </div>
+              <p class="text-xs text-slate-500">Mulai dari</p>
+              <p class="text-xl font-extrabold mb-3">Rp1.500.000 <span class="text-xs font-normal text-slate-500">/hari</span></p>
+              <a href="https://wa.me/6282231444865?text=Sewa%20Hiace" class="block text-center bg-drivego-yellow text-white py-2.5 rounded-lg text-xs font-bold hover:opacity-90">Pesan Sekarang →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-drivego-dark rounded-2xl p-6 grid md:grid-cols-4 gap-6 text-white">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-lg bg-drivego-yellow/10 flex items-center justify-center"><i class="fa-solid fa-location-dot text-drivego-yellow text-xl"></i></div>
+          <div><h5 class="font-bold text-sm">Lokasi Strategis</h5><p class="text-xs text-slate-400">Tersedia di berbagai kota besar di Indonesia</p></div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-lg bg-drivego-yellow/10 flex items-center justify-center"><i class="fa-solid fa-calendar text-drivego-yellow text-xl"></i></div>
+          <div><h5 class="font-bold text-sm">Booking Fleksibel</h5><p class="text-xs text-slate-400">Harian, mingguan, atau bulanan sesuai kebutuhan Anda</p></div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-lg bg-drivego-yellow/10 flex items-center justify-center"><i class="fa-solid fa-percent text-drivego-yellow text-xl"></i></div>
+          <div><h5 class="font-bold text-sm">Harga Kompetitif</h5><p class="text-xs text-slate-400">Harga terbaik dengan kualitas armada terbaik</p></div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-lg bg-drivego-yellow/10 flex items-center justify-center"><i class="fab fa-whatsapp text-drivego-yellow text-xl"></i></div>
+          <div><h5 class="font-bold text-sm">Bantuan 24/7</h5><p class="text-xs text-slate-400">Customer service siap membantu kapan saja Anda butuh</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-drivego-dark py-8 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 text-center text-sm text-slate-500">
+      &copy; 2026 DriveGo. Rental Mobil Terbaik & Terpercaya.
+    </div>
+  </footer>
+
+  <!-- SCRIPT FORM BOOKING KE WHATSAPP -->
+  <script>
+  document.getElementById('bookingForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const lokasi = document.getElementById('lokasi').value;
+    const tglMulai = document.getElementById('tglMulai').value;
+    const tglSelesai = document.getElementById('tglSelesai').value;
+    const mobil = document.getElementById('tipeMobil').value;
+
+    const formatTgl = (tgl) => {
+      const date = new Date(tgl);
+      return date.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+    };
+
+    const pesan = `Halo DriveGo, mau booking mobil:%0A%0A📍 Lokasi: ${lokasi}%0A🚗 Mobil: ${mobil}%0A📅 Mulai: ${formatTgl(tglMulai)}%0A📅 Selesai: ${formatTgl(tglSelesai)}%0A%0AMohon info ketersediaan & harga. Terima kasih!`;
+
+    // GANTI 6282231444865 JADI NOMOR WA ANDA
+    window.open(`https://wa.me/6282231444865?text=${pesan}`, '_blank');
+  });
+  </script>
+
+</body>
+</html>
